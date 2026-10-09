@@ -1,18 +1,21 @@
 {
   "name": "great-dreamer",
   "displayName": "The Great Dreamer",
-  "description": "A Dark Theme for the Dreamers out there - Accents of Neon colors with high Cyberpunk influence",
-  "version": "1.0.2",
+  "description": "A Dark Theme for the Dreamers out there - Accents of Neon colors with high Cyberpunk influence. Works in VS Code and Cursor.",
+  "version": "1.1.0",
   "engines": {
-    "vscode": "^1.47.0"
+    "vscode": "^1.80.0"
   },
-  "publisher": "arthurdiegoo",
+  "publisher": "rgsx",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arthurdiegoo/the-great-dreamer-theme"
+    "url": "https://github.com/rgsx/the-great-dreamer-theme"
   },
   "scripts": {
-    "deploy": "vsce publish"
+    "build": "node scripts/build.js",
+    "build:check": "node scripts/build.js --check",
+    "package": "npm run build && npx @vscode/vsce package",
+    "publish:ovsx": "npm run build && npx ovsx publish"
   },
   "keywords": [
     "Theme",
@@ -23,7 +26,8 @@
     "Purple Theme",
     "Great Dreamer",
     "Acessible Theme",
-    "Night Theme"
+    "Night Theme",
+    "Cursor"
   ],
   "categories": [
     "Themes"
@@ -33,21 +37,21 @@
     "color": "#211c26",
     "theme": "dark"
   },
-  "homepage": "https://github.com/arthurdiegoo/the-great-dreamer-theme/blob/master/README.md",
+  "homepage": "https://github.com/rgsx/the-great-dreamer-theme#readme",
   "bugs": {
-    "url": "https://github.com/arthurdiegoo/the-great-dreamer-theme/issues"
+    "url": "https://github.com/rgsx/the-great-dreamer-theme/issues"
   },
   "contributes": {
     "themes": [
       {
         "label": "The Great Dreamer",
         "uiTheme": "vs-dark",
-        "path": "./themes/The Great Dreamer-color-theme.json"
+        "path": "./themes/great-dreamer-color-theme.json"
       },
       {
         "label": "The Great Sleeper",
         "uiTheme": "vs-dark",
-        "path": "./themes/The Great Sleeper-color-theme.json"
+        "path": "./themes/great-sleeper-color-theme.json"
       }
     ]
   }
