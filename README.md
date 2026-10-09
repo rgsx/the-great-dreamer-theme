@@ -10,15 +10,17 @@ Feel free to contribute and help to improve the language coverage of the Theme!
 
 ## The Great Dreamer
 
-![Great Dreamer TypeScript Example](https://raw.githubusercontent.com/rgsx/the-great-dreamer-theme/master/assets/images/typescript-dreamer.png)
-![Great Dreamer JavaScript Example](https://raw.githubusercontent.com/rgsx/the-great-dreamer-theme/master/assets/images/javascript-dreamer.png)
+![The Great Dreamer in Cursor, editor with GitLens blame, terminal and agent chat](https://raw.githubusercontent.com/rgsx/the-great-dreamer-theme/master/assets/screenshots/dreamer-1.png)
+![The Great Dreamer in Cursor, split editors with SCSS, Markdown and TypeScript](https://raw.githubusercontent.com/rgsx/the-great-dreamer-theme/master/assets/screenshots/dreamer-2.png)
+![The Great Dreamer in Cursor, inline TypeScript errors while the agent works](https://raw.githubusercontent.com/rgsx/the-great-dreamer-theme/master/assets/screenshots/dreamer-3.png)
 
 ## The Great Sleeper
 
 Same palette with darker visuals.
 
-![Great Sleeper TypeScript Example](https://raw.githubusercontent.com/rgsx/the-great-dreamer-theme/master/assets/images/typescript-sleeper.png)
-![Great Sleeper JavaScript Example](https://raw.githubusercontent.com/rgsx/the-great-dreamer-theme/master/assets/images/javascript-sleeper.png)
+![The Great Sleeper in Cursor, editor with GitLens blame, terminal and agent chat](https://raw.githubusercontent.com/rgsx/the-great-dreamer-theme/master/assets/screenshots/sleeper-1.png)
+![The Great Sleeper in Cursor, split editors with SCSS, Markdown and TypeScript](https://raw.githubusercontent.com/rgsx/the-great-dreamer-theme/master/assets/screenshots/sleeper-2.png)
+![The Great Sleeper in Cursor, inline TypeScript errors while the agent works](https://raw.githubusercontent.com/rgsx/the-great-dreamer-theme/master/assets/screenshots/sleeper-3.png)
 
 # Installation
 
@@ -38,3 +40,19 @@ npm run package    # builds great-dreamer-<version>.vsix
 ```
 
 To try changes, open the folder in VS Code or Cursor and press F5. To install the packaged theme, run **Extensions: Install from VSIX...** from the Command Palette and pick the `.vsix` file, or use `cursor --install-extension great-dreamer-1.1.0.vsix` (`code --install-extension ...` for VS Code).
+
+# Changelog
+
+### 1.1.0
+
+- Support for current VS Code and **Cursor**: about 260 new UI colors per theme, covering chat and inline edits, the command center, sticky scroll, bracket pairs, inlay hints, diffs and the merge editor.
+- Vue template support (tags, directives, shorthands and `{{ }}`).
+- Semantic highlighting, readable diffs and better contrast for secondary text and comments.
+- Fixed token rules that never matched and the swapped theme names.
+- Both themes are generated from a single source, and the package is much smaller.
+
+See [CHANGELOG.md](CHANGELOG.md) for the full history.
+
+# License
+
+[MIT](LICENSE). Based on [The Great Dreamer](https://github.com/arthur404dev/the-great-dreamer-theme) by Arthur Andrade, which is no longer maintained.
