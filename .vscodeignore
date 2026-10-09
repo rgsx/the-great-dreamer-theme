@@ -16,3 +16,4 @@ vsc-extension-quickstart.md
 # README screenshots are linked from GitHub, so only the icon is packaged.
 assets/**
 !assets/images/dreamer-logo.png
+showcase/**
