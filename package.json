@@ -1,8 +1,8 @@
 {
   "name": "great-dreamer",
   "displayName": "The Great Dreamer",
-  "description": "A Dark Theme for the Dreamers out there - Accents of Neon colors with high Cyberpunk influence. Works in VS Code and Cursor.",
-  "version": "1.1.0",
+  "description": "Lovecraftian dark themes for VS Code and Cursor: The Great Dreamer and The Great Sleeper, plus five variants drawn from the Mythos: The Great Deep, The Great Blight, The Great Grimoire, The Great Gilded and The Great Abyss.",
+  "version": "1.2.0",
   "license": "MIT",
   "engines": {
     "vscode": "^1.80.0"
@@ -15,19 +15,30 @@
   "scripts": {
     "build": "node scripts/build.js",
     "build:check": "node scripts/build.js --check",
+    "screenshots": "python3 scripts/make-screenshots.py",
+    "icons": "python3 scripts/make-icons.py",
     "package": "npm run build && npx @vscode/vsce package",
     "publish:ovsx": "npm run build && npx ovsx publish"
   },
   "keywords": [
     "Theme",
     "Dark Theme",
-    "Love Craft",
-    "lovecraft",
-    "Chtullu",
     "Purple Theme",
-    "Great Dreamer",
-    "Acessible Theme",
     "Night Theme",
+    "Accessible Theme",
+    "Great Dreamer",
+    "Lovecraft",
+    "Lovecraftian",
+    "Cthulhu",
+    "Cosmic Horror",
+    "Eldritch",
+    "Necronomicon",
+    "Color Out of Space",
+    "Green Theme",
+    "Brown Theme",
+    "Gold Theme",
+    "Indigo Theme",
+    "Black Theme",
     "Cursor"
   ],
   "categories": [
@@ -53,6 +64,31 @@
         "label": "The Great Sleeper",
         "uiTheme": "vs-dark",
         "path": "./themes/great-sleeper-color-theme.json"
+      },
+      {
+        "label": "The Great Deep",
+        "uiTheme": "vs-dark",
+        "path": "./themes/great-deep-color-theme.json"
+      },
+      {
+        "label": "The Great Blight",
+        "uiTheme": "vs-dark",
+        "path": "./themes/great-blight-color-theme.json"
+      },
+      {
+        "label": "The Great Grimoire",
+        "uiTheme": "vs-dark",
+        "path": "./themes/great-grimoire-color-theme.json"
+      },
+      {
+        "label": "The Great Gilded",
+        "uiTheme": "vs-dark",
+        "path": "./themes/great-gilded-color-theme.json"
+      },
+      {
+        "label": "The Great Abyss",
+        "uiTheme": "vs-dark",
+        "path": "./themes/great-abyss-color-theme.json"
       }
     ]
   }

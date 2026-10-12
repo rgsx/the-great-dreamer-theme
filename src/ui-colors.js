@@ -1,5 +1,6 @@
-// Workbench (UI) colors shared by both themes.
-// Every value comes from the theme palette (p) or the shared syntax colors (s).
+// Workbench (UI) colors shared by every theme.
+// Every value comes from the theme palette (p) or the theme's syntax colors (s), except the
+// neutral constants below (white text on accents, black shadows).
 'use strict';
 
 const WHITE = '#ffffff';
@@ -30,7 +31,7 @@ module.exports = (p, s) => [
   ['Breadcrumb', {
     'breadcrumb.activeSelectionForeground': s.string,
     'breadcrumb.background': p.breadcrumbBackground,
-    'breadcrumb.focusForeground': '#e0e0e0',
+    'breadcrumb.focusForeground': p.breadcrumbFocusForeground,
     'breadcrumb.foreground': p.breadcrumbForeground,
     'breadcrumbPicker.background': p.bg,
   }],
@@ -47,31 +48,31 @@ module.exports = (p, s) => [
   ['Editor', {
     'dropdown.background': p.bg,
     'editor.background': p.editorBg,
-    'editor.findMatchBackground': '#494949',
-    'editor.findMatchHighlightBackground': '#b5a1ff4d',
+    'editor.findMatchBackground': p.findMatchBackground,
+    'editor.findMatchHighlightBackground': p.findMatchHighlightBackground,
     'editor.foreground': p.fg,
-    'editor.inactiveSelectionBackground': '#4530582f',
-    'editor.lineHighlightBackground': '#222530',
-    'editor.selectionBackground': '#313343',
-    'editorCursor.foreground': '#f8f8f0',
-    'editorGroup.dropBackground': '#1b171f',
+    'editor.inactiveSelectionBackground': p.inactiveSelectionBackground,
+    'editor.lineHighlightBackground': p.lineHighlightBackground,
+    'editor.selectionBackground': p.selectionBackground,
+    'editorCursor.foreground': p.cursor,
+    'editorGroup.dropBackground': p.editorGroupDropBackground,
     'editorGroupHeader.tabsBackground': p.bg,
     'editorHoverWidget.background': p.bg,
     'editorHoverWidget.border': p.border,
-    'editorIndentGuide.background': '#473b64',
+    'editorIndentGuide.background': p.indentGuide,
     'editorSuggestWidget.background': p.bg,
-    'editorSuggestWidget.border': '#3e3746',
+    'editorSuggestWidget.border': p.suggestWidgetBorder,
     'editorSuggestWidget.highlightForeground': s.string,
-    'editorWhitespace.foreground': '#312d3a',
+    'editorWhitespace.foreground': p.whitespace,
     'editorWidget.background': p.bg,
     'focusBorder': p.accent,
   }],
   ['Git', {
     'gitDecoration.addedResourceForeground': a(p.green, 'cc'),
     'gitDecoration.deletedResourceForeground': p.red,
-    'gitDecoration.ignoredResourceForeground': '#8a7c9c',
+    'gitDecoration.ignoredResourceForeground': p.gitIgnored,
     'gitDecoration.modifiedResourceForeground': p.modified,
-    'gitDecoration.untrackedResourceForeground': '#5eff81ee',
+    'gitDecoration.untrackedResourceForeground': p.gitUntracked,
     'input.background': p.bg,
   }],
   ['Lists', {
@@ -97,7 +98,7 @@ module.exports = (p, s) => [
     'tab.activeBorderTop': p.tabActiveBorderTop,
     'tab.border': p.bg,
     'tab.inactiveBackground': p.bg,
-    'tab.inactiveForeground': '#65737f',
+    'tab.inactiveForeground': p.tabInactiveForeground,
   }],
   ['Terminal', {
     'terminal.ansiBlack': p.terminal.ansiBlack,
@@ -267,7 +268,7 @@ module.exports = (p, s) => [
     'editor.hoverHighlightBackground': a(p.contrastBg, '40'),
     'editor.rangeHighlightBackground': a(p.contrastBg, '33'),
     'editorLink.activeForeground': p.cyan,
-    'editorIndentGuide.background1': '#473b64',
+    'editorIndentGuide.background1': p.indentGuide,
     'editorIndentGuide.activeBackground1': p.accent,
     'editorRuler.foreground': p.border,
     'editorCodeLens.foreground': p.muted,

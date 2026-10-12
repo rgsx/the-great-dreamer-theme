@@ -24,9 +24,14 @@ function color(value, where) {
   return v;
 }
 
+// Shared syntax colors with the theme's own `syntax` overrides on top.
+function syntaxFor(p) {
+  return { ...syntax, ...(p.syntax || {}) };
+}
+
 function buildColors(p) {
   const out = {};
-  for (const [section, entries] of uiColors(p, syntax)) {
+  for (const [section, entries] of uiColors(p, syntaxFor(p))) {
     for (const [key, value] of Object.entries(entries)) {
       if (value === undefined) continue; // not defined for this theme
       if (key in out) throw new Error(`${p.id}: duplicate color key ${key} (${section})`);
@@ -54,12 +59,12 @@ function buildTheme(p) {
   };
   if (semanticTokenColors) {
     const sem = {};
-    for (const [k, v] of Object.entries(semanticTokenColors(p, syntax))) {
+    for (const [k, v] of Object.entries(semanticTokenColors(p, syntaxFor(p)))) {
       sem[k] = typeof v === 'string' ? color(v, `${p.id} semantic ${k}`) : normalizeSettings(v, `${p.id} semantic ${k}`);
     }
     theme.semanticTokenColors = sem;
   }
-  theme.tokenColors = tokenColors(p, syntax).map((rule, i) => ({
+  theme.tokenColors = tokenColors(p, syntaxFor(p)).map((rule, i) => ({
     ...(rule.name ? { name: rule.name } : {}),
     scope: rule.scope,
     settings: normalizeSettings(rule.settings, `${p.id} tokenColors[${i}]`),
@@ -88,4 +93,4 @@ function main() {
 }
 
 if (require.main === module) main();
-module.exports = { buildTheme, themes, syntax };
+module.exports = { buildTheme, themes, syntax, syntaxFor };

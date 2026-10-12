@@ -1,0 +1,56 @@
+/* The Great Dreamer: CSS */
+@import url('fonts.css');
+
+:root {
+  --accent: #ff79c6;
+  --depth: 47px;
+  --glow: rgba(154, 239, 234, 0.4);
+}
+
+main {
+  margin-top: 20px;
+}
+
+.someClass,
+#someID > .rune::before {
+  font-family: 'Fira Code', serif;
+  color: var(--accent);
+  padding: calc(var(--depth) / 2) 1.5rem;
+  box-shadow: 0 0 0 2px var(--glow) inset;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline wavy;
+  transform: rotate(-2deg) scale(1.05);
+}
+
+input[type='text']:not(:placeholder-shown) {
+  border: 1px solid #44475a !important;
+}
+
+li:nth-child(2n + 1)::after {
+  content: '\2726';
+  opacity: 0.6;
+}
+
+@media (prefers-reduced-motion: reduce) and (min-width: 768px) {
+  .rune {
+    animation: none;
+  }
+}
+
+@supports (backdrop-filter: blur(4px)) {
+  .veil {
+    backdrop-filter: blur(4px) saturate(120%);
+  }
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

@@ -1,5 +1,5 @@
-// TextMate token colors shared by both themes.
-// p = theme palette (for per-theme differences), s = shared syntax colors.
+// TextMate token colors shared by every theme.
+// p = theme palette (for per-theme differences), s = the theme's syntax colors.
 'use strict';
 
 module.exports = (p, s) => [
@@ -88,6 +88,8 @@ module.exports = (p, s) => [
   {
     scope: [
       'variable.language.this',
+      'variable.language.self.rust',
+      'variable.language.super.rust',
       'storage.modifier.ts',
       'entity.name.tag.css',
       'source.ruby keyword.other.special-method.ruby',
@@ -145,6 +147,9 @@ module.exports = (p, s) => [
       'support.class.component.open.jsx',
       'support.class.component.close.jsx',
       'support.class.component.js.jsx',
+      // Built-in VS Code grammars: JavaScript (.js) and TypeScriptReact (.tsx).
+      'support.class.component.js',
+      'support.class.component.tsx',
     ],
     settings: { foreground: s.component },
   },
@@ -291,6 +296,36 @@ module.exports = (p, s) => [
       'punctuation.separator.key-value.vue',
     ],
     settings: { foreground: s.punctuation },
+  },
+  // Rust (the built-in VS Code grammar).
+  {
+    scope: ['meta.interpolation.rust', 'punctuation.definition.interpolation.rust'],
+    settings: { foreground: s.interpolation },
+  },
+  {
+    // #[derive(...)], #![allow(...)]: the marker and plain words; derived traits keep the type color.
+    scope: ['meta.attribute.rust', 'punctuation.definition.attribute.rust', 'punctuation.brackets.attribute.rust'],
+    settings: { foreground: s.magenta },
+  },
+  {
+    scope: ['entity.name.module.rust', 'entity.name.namespace.rust'],
+    settings: { foreground: s.type },
+  },
+  {
+    scope: ['entity.name.function.macro.rust', 'entity.name.function.macro.rules.rust', 'entity.name.type.macro.rust'],
+    settings: { foreground: s.pink },
+  },
+  {
+    scope: ['entity.name.type.lifetime.rust', 'punctuation.definition.lifetime.rust'],
+    settings: { foreground: s.interpolation, fontStyle: 'italic' },
+  },
+  {
+    scope: 'keyword.operator.question.rust',
+    settings: { foreground: s.keyword },
+  },
+  {
+    scope: ['comment.line.documentation.rust', 'comment.block.documentation.rust'],
+    settings: { foreground: s.comment, fontStyle: 'italic' },
   },
   { scope: 'token.info-token', settings: { foreground: s.info } },
   { scope: 'token.warn-token', settings: { foreground: s.warn } },

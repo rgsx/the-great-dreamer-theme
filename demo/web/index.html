@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Great Dreamer &amp; friends</title>
+    <style>
+      body { background: #1d1a24; color: #f8f8f2; }
+      .sigil:hover { color: var(--accent, #ff79c6); }
+    </style>
+  </head>
+
+  <body>
+    <!-- A comment from the depths -->
+    <main id="app" class="dream" data-depth="47">
+      <h1>Dream Tight</h1>
+      <p>From the depths of the <em>Dreams</em>, &ldquo;fhtagn&rdquo;.</p>
+      <img src="rlyeh.png" alt="Sunken city" width="320" loading="lazy" />
+      <label for="name">Name</label>
+      <input id="name" type="text" required placeholder="Wilbur" />
+      <button type="button" class="sigil" disabled>Summon</button>
+      <a href="https://example.com/necronomicon" target="_blank" rel="noopener">Read more</a>
+    </main>
+
+    <script type="module">
+      const depth = Number(document.querySelector('#app').dataset.depth);
+      document.title = `Depth ${depth}`;
+    </script>
+  </body>
+</html>

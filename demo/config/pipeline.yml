@@ -1,0 +1,22 @@
+# The Great Dreamer: YAML
+name: great-dreamer-demo
+on:
+  push:
+    branches: [master]
+defaults: &defaults
+  node: 20
+  cache: true
+jobs:
+  build:
+    <<: *defaults
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm ci
+      - run: npm run build:check
+    env:
+      DEPTH: 47
+      MOTTO: "Ph'nglui mglw'nafh"
+      NOTES: |
+        That is not dead
+        which can eternal lie.
+      DEBUG: ~
